@@ -10,6 +10,13 @@ class SmartParagraph extends Component {
 		};
 	}
 
+	toggleParagraphLength() {
+		const text = this.state.text
+		this.setState({
+			text: text.slice(0, 100)
+		}) 
+	}
+
 	render() {
 		return (
 			<div className="SmartParagraph">
@@ -22,7 +29,7 @@ class SmartParagraph extends Component {
 				<p className="SmartParagraph__value">
 					{this.state.text}
 				</p>
-				<button>Toggle</button>
+				<button onClick={this.toggleParagraphLength.bind(this)}>Toggle</button>
 			</div>
 		)
 	}
